@@ -1,0 +1,95 @@
+fArraylist is a class which is implementing list interface :-
+import java.util.*;  
+class TestJavaCollection1{  
+public static void main(String args[]){  
+ArrayList<String> list=new ArrayList<String>();//Creating arraylist  
+list.add("Ravi");//Adding object in arraylist  
+list.add("Vijay");  
+list.add("Ravi");  
+list.add("Ajay");  
+//Traversing list through Iterator  
+Iterator itr=list.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+}  
+}  
+
+o/p:-
+Ravi
+Vijay
+Ravi
+Ajay
+
+>>>>>>>>>>>>>>>Theory<<<<<<<<<<<<<<<<<<<<<<<,,
+Java ArrayList class uses a dynamic array for storing the elements. 
+It is like an array, but there is no size limit. We can add or remove elements anytime. 
+So, it is much more flexible than the traditional array. 
+It is found in the java.util package. 
+
+>>>SORTING THE LIST:-
+System.out.println("Sorting numbers...");  
+  //Creating a list of numbers  
+  List<Integer> list2=new ArrayList<Integer>();  
+  list2.add(21);  
+  list2.add(11);  
+  list2.add(51);  
+  list2.add(1);  
+  //Sorting the list  
+  Collections.sort(list2);  
+   //Traversing list through the for-each loop  
+  for(Integer number:list2)  
+    System.out.println(number);  
+ }  
+   
+}  
+
+O/P:-Sorting numbers...
+1
+11
+21
+51
+
+
+
+>>>>>Usin Arraylist in user defined class:-
+class Student{  
+  int rollno;  
+  String name;  
+  int age;  
+  Student(int rollno,String name,int age){  
+   this.rollno=rollno;  
+   this.name=name;  
+   this.age=age;  
+  }  
+}  
+
+
+import java.util.*;  
+ class ArrayList5{  
+ public static void main(String args[]){  
+  //Creating user-defined class objects  
+  Student s1=new Student(101,"Sonoo",23);  
+  Student s2=new Student(102,"Ravi",21);  
+  Student s2=new Student(103,"Hanumat",25);  
+  //creating arraylist  
+  ArrayList<Student> al=new ArrayList<Student>();  
+  al.add(s1);//adding Student class object  
+  al.add(s2);  
+  al.add(s3);  
+  //Getting Iterator  
+  Iterator itr=al.iterator();  
+  //traversing elements of ArrayList object  
+  while(itr.hasNext()){  
+    Student st=(Student)itr.next();  
+    System.out.println(st.rollno+" "+st.name+" "+st.age);  
+  }  
+ }  
+}  
+Output:
+
+       101 Sonoo 23
+       102 Ravi 21
+       103 Hanumat 25
+
+

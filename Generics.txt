@@ -1,0 +1,112 @@
+Example 1:
+
+class Data<T>{
+	private T myVariable;
+
+	public Data(T myVariable) {
+		super();
+		this.myVariable = myVariable;
+	}
+
+	public T getMyVariable() {
+		return myVariable;
+	}
+
+	@Override
+	public String toString() {
+		return "Data [myVariable=" + myVariable + "]";
+	}
+	
+}
+
+public class App {
+
+	public static void main(String[] args) {
+
+		List<Data<Object>> elements = new LinkedList<>();
+		elements.add(new Data<Object>("Some text"));
+		elements.add(new Data<Object>(1.0));
+		elements.add(new Data<Object>(1));
+		elements.add(new Data<Object>('%'));
+		elements.add(new Data<Object>(5.0f));
+		
+		App app = new App();
+		app.printList(elements);
+	}
+
+	void printList(List<Data<Object>> list) {
+		ListIterator<Data<Object>> iterator = list.listIterator();
+		while (iterator.hasNext()) {
+			System.out.println("Element: " + iterator.next());}
+	}
+
+}
+
+
+O/P:-
+Element: Data [myVariable=" Some text"]
+ 
+Element: Data [myVariable=" 1.0"]
+ 
+Element: Data [myVariable="  1 "]
+ 
+Element: Data [myVariable=" % "]
+ 
+Element: Data [myVariable=" 5.0 "]
+
+
+Example 2:
+class Data<T>{
+	private T myVariable;
+
+	public Data(T myVariable) {
+		super();
+		this.myVariable = myVariable;
+	}
+
+	public T getMyVariable() {
+		return myVariable;
+	}
+
+	@Override
+	public String toString() {
+		return "Data [myVariable=" + myVariable + "]";
+	}
+	
+}
+
+public class App {
+
+	public static void main(String[] args) {
+
+		List<Data<Integer>> elements = new LinkedList<>();
+		elements.add(new Data<Integer>(1));
+		elements.add(new Data<Integer>(2));
+		elements.add(new Data<Integer>(3));
+		elements.add(new Data<Integer>(4));
+		elements.add(new Data<Integer>(5));
+		
+		App app = new App();
+		app.printList(elements);
+	}
+
+	void printList(List<Data<Integer>> list) {
+		ListIterator<Data<Integer>> iterator = list.listIterator();
+		while (iterator.hasNext()) {
+			System.out.println("Element: " + iterator.next().getMyVariable() * 10);
+		}
+	}
+
+}
+
+
+O/P:-
+Element: 10
+
+Element: 20
+
+Element: 30
+
+Element: 40
+
+Element: 50

@@ -1,0 +1,85 @@
+Created by sun microsystem in 1991 by james gosling 
+JAVA is one of a coffee breed  ,first OAK name was decided but it was already taken
+
+"JAVA IS EVERYWHERE THIS IS THE SLOGAN ,Since it is platform independent
+platform is nothing but the enviroment jisme software run ho pata ,eg in our computer operating system ek platform hai java can be run in different OS
+
+PRINCIPLE OF JAVA:"Write Once , Run Anywhere(WORA)"
+
+JAVA LIBRARY is a collection of predefined classes :we can use classes either by inheriting them or by insantiating them .
+It is more secure since we dont have of pointer concept therefore we cant change memory location   data
+
+
+We cant call java 100% oop language becoz sometimes lets say we are using loop we 'll do all our work using primitive datatype and we are not using any object 
+To overcome this we are using WRAPPING CLASSES like to instead of using int datatpe we are using Integer class inbuild class that is and use its static function
+eg:-Integer i=Integer.valueOf("123");//////valueOf function Integer class ka object banayega aur uska reference i ko dega 
+
+
+here i is a reference variable storing  value 123 hence we are using OOPS here
+
+We can use int i=Integer.parseInt("123"); also it used to converting string argument into integer and returns int value that can be stored in int datatype
+
+to give i value to primitive datatype and use it, use intValue() function
+
+
+Integer i=Integer.valueOf("123");
+int c=i.intValue();
+c=123 now
+
+
+#####3valueOf,parseInt is  static method of wrapping class,intValue is an instance if wrapping class i.e Integer,Double,Charater,Long etc######
+
+///////////Command line argument  Importance
+
+public class SongName{
+	public static void main(String[] args){
+		
+int s=0;
+for(int i=0;i<args.length;i++)
+s=s+Integer.parseInt(args[i]);////we can pass argument in args while running in command prompt writing java SongName 122 34 667 ;like this
+
+System.out.println(s);
+	
+	
+	}
+}
+
+
+##STRING BUILDER :-it is like string onlu but it will not make new element in heap memory when we concatenate and hence saves time
+
+
+StringBuilder sb=new StringBuilder("Tony");
+sysout(sb);   ///Tony
+
+sb.charAt(0)  ///T
+
+We can also set characters in stringbuilder
+
+sb.setCharAt(0,'P');
+sysout(sb);///Pony
+
+
+
+we can also insert character
+
+sb.insert(0,'S');
+sysout(sb);   ////SPony
+
+
+we can also delete substring in string
+
+sb.delete(2,3);
+sysout(sb);  ///SPny
+
+
+we can append element in string builder
+
+sb.append("l");
+sysout(sb);  ////SPnyl
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+package javapracice;
+
+public class ThreadingPractice {
+
+	public static void main(String[] args) throws InterruptedException {
+		MyCounter counter1=new MyCounter(1);
+		MyCounter counter2=new MyCounter(2);
+		long starttime=System.currentTimeMillis();
+		System.out.println("*************");
+		counter1.start();
+		counter2.start();
+		Thread.sleep(4500);
+		long endtime=System.currentTimeMillis();
+		System.out.println("the total time taken is "+(endtime-starttime));
+		
+		
+
+	}
+
+}
+class MyCounter extends Thread{
+	private int threadNo;
+
+	public MyCounter(int threadNo) {
+		 
+		this.threadNo = threadNo;
+	}
+	
+	public void run() {
+		countme();
+	}
+	public void countme(){
+		for(int i=1;i<=9;i++) {
+			try {
+				sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println("The i th value is "+i+" and thread number is "+threadNo);
+		}
+		
+	}
+	
+	
+}
+
+
+
+Explanation :It is like a main thread which starts the execution on the way it starts counter1 thread and counter2 thread and Thread.sleep(4500) is for main function 
